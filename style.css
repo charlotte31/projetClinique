@@ -34,7 +34,7 @@ body{
 {
 	background:VioletRed;
 	text-align:right;
-	height:25px;
+	height:50px;
 }
 
 #top h1
@@ -212,102 +212,40 @@ label {
 /* ----------------------------------------------------------------------
 CSS du menu deroulant s'inscrire, il faut toutes les rubriques ci-dessous
 ------------------------------------------------------------------------- */
-#menu-deroulant, #menu-deroulant ul{
-	padding:0;
-	margin:0;
-	list-style:none;
-	text-align:center;
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
-#menu-deroulant li{
-	display:inline-block;
-	position:relative;
-	border-radius:8px 8px 0 0;
-}
-#menu-deroulant ul li{
-	display:inherit;
-	border-radius:0;
-}
-#menu-deroulant ul li:hover{
-	border-radius:0;
-}
-#menu-deroulant ul li:last-child{
-	border-radius:0 0 8px 8px;
-}
-#menu-deroulant ul{
-	position:absolute;
-	max-height:0;
-	left: 0;
-	right: 0;
-	overflow:hidden;
-	-moz-transition: .8s all .3s;
-	-webkit-transition: .8s all .3s;
-	transition: .8s all .3s;
-}
-#menu-deroulant li:hover ul{
-	max-height:15em;
-}
-/* background des liens menus */
-#menu-deroulant li:first-child{
-	background-color: #65537A;
-	background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
-	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
-}
-#menu-deroulant li:nth-child(2){
-	background-color: #729EBF;
-	background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
-	background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
-}
-#menu-deroulant li:nth-child(3){
-	background-color: #F6AD1A;
-	background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
-	background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
-}
-#menu-deroulant li:last-child{
-	background-color: #CFFF6A;
-	background-image:-webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
-	background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
-}
-/* background des liens sous menus */
-#menu-deroulant li:first-child li{
-	background:#2A2333;
-}
-#menu-deroulant li:nth-child(2) li{
-	background:#333A40;
-}
-#menu-deroulant li:nth-child(3) li{
-	background:#9F391A;
-}
-#menu-deroulant li:last-child li{
-	background:#677F35;
-}
-/* background des liens menus et sous menus au survol */
-#menu-deroulant li:first-child:hover, #menu-deroulant li:first-child li:hover{
-	background:#65537A;
-}
-#menu-deroulant li:nth-child(2):hover, #menu-deroulant li:nth-child(2) li:hover{
-	background:#729EBF;
-}
-#menu-deroulant li:nth-child(3):hover, #menu-deroulant li:nth-child(3) li:hover{
-	background:#F6AD1A;
-}
-#menu-deroulant li:last-child:hover, #menu-deroulant li:last-child li:hover{
-	background:#CFFF6A;
-}
-/* les a href */
-#menu-deroulant a{
-	text-decoration:none;
-	display:block;
-	padding:4px 32px;
-	color:#fff;
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: right;
 	font-family:arial;
+	font-size:15px;
 }
-#menu-deroulant ul a{
-	padding:8px 0;
-} 
-#menu-deroulant li:hover li a{
-	color:#fff;
-	text-transform:inherit;
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+	text-align:center;
+	background-color:#D02090;
 }
-#menu-deroulant li:hover a, #menu-deroulant li li:hover a{
-	color:#000;
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+	color:#8B008B;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+	
 }
