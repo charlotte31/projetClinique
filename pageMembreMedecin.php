@@ -8,7 +8,7 @@
 	</head>
 		<body>
 			<?php include("menuMembreMedecin.php"); ?>
-			<?php include("menuGauche.php"); ?>
+			<?php include("menuGaucheMedecin.php"); ?>
 				<div id="container">
 					<div id="content">
 					
