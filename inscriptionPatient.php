@@ -22,7 +22,7 @@
 		<div id="container">
 			<div id="content">
 				Inscription des patients
-				<form name="myForm"  method="post" action="inscriptionPatientDB.php">
+				<form name="myForm"  method="post" action="inscriptionPatientBD.php">
 					<BR>
 					<fieldset>
 						<legend> A propos de vous : </legend><BR>
