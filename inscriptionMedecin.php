@@ -23,12 +23,13 @@
 		<link type="text/css" rel="stylesheet" href="style.css"/>
 	</head>
 	<body>
+		<script type="text/javascript" src="checkForm.js"></script>
 		<?php include("menu.php"); ?>
 		<?php include("menuGauche.php"); ?>
 		<div id="container">
 			<div id="content">
 			Inscription des docteurs<br> 
-				<form name="myForm"  method="post" action="inscriptionMedecinBD.php">
+				<form name="myForm"  method="post" action="inscriptionMedecinBD.php"  onsubmit="return toSubmit();">
 					<BR>
 					<fieldset>
 						<legend> A propos de vous : </legend><BR>
@@ -47,7 +48,7 @@
 							$db = mysqli_select_db($connexion, 'clinique');
 							$result = mysqli_query($connexion, "SELECT nomSpe FROM specialite");
 							
-							echo "<label for=\"specialites\">Specialité :<BR></label>";
+							echo "<label for=\"specialites\">Votre specialité :<BR></label>";
 							echo "<select name=\"specialites\" id=\"specialites\">";
 							
 							while ($row = mysqli_fetch_array($result)){
@@ -63,7 +64,7 @@
 						<label for="pwd">Mot de passe :</label><BR>
 						<input type="password" name="pwd"><span id="maZonePwd" class="error"></span><BR>
 						<label for="pwd2">Confirmation du mot de passe :</label><BR>
-						<input type="password" name="pwd2"><span id="maZonePwd" class="error"></span><BR>
+						<input type="password" name="pwd2"><span id="maZonePwd2" class="error"></span><BR>
 					</fieldset>
 					<p>
 						<Input type ="submit" value ="Valider"/>
