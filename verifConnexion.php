@@ -21,7 +21,7 @@ pour l'instant ne vériefie que dans la table medecin, je verifierai la table pa
 		<div id="container">
 			<div id="content">
 				<?php
-					$connexion = mysqli_connect("localhost", "root", "e8EfXCjXDNpVvRaB") or die(mysqli_error());
+						$connexion = mysqli_connect("localhost", "root", "e8EfXCjXDNpVvRaB") or die(mysqli_error());
 					if(!$connexion){
 						die('could not connect:'.mysql-error());
 					}
@@ -45,6 +45,7 @@ pour l'instant ne vériefie que dans la table medecin, je verifierai la table pa
 								$_SESSION['pwd'] = $pwd;
 								// on redirige notre visiteur vers une page de notre section membre
 								header ('location: pageMembreMedecin.php');
+								echo 'ok';
 							}
 						}
 						else // Si le couple mail/ mot de passe n'est pas bon.
