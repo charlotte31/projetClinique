@@ -3,8 +3,12 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-<!-- Accueil du site -->
+<!-- Accueil du site une fois le medecin connecte a sa session-->
 
+<?php
+	require('controleSession.php');
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 		<meta name="Description" content="A free open source web design by Gen.  Free for anyone to use as long as credits are intact. " />
@@ -16,8 +20,8 @@
 		<link type="text/css" rel="stylesheet" href="style.css"/>
 	</head>
 	<body>
-		<?php include("menu.php"); ?>
-		<?php include("menuGauche.php"); ?>
+		<?php include("menuMembreMedecin.php"); ?>
+		<?php include("menuGaucheMedecin.php"); ?>
 		<div id="container">
 			<div id="content">
 				<p>

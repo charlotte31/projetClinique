@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 
-<!-- menu retrouve dans la barre de navigation une fois les medecins connectes -->
+<!-- menu propose a l'administrateur du site -->
 
 <div id="top">
 	<h1>Clinique du Docteur Duroux</h1>
@@ -17,6 +17,13 @@
 					<li><a href="./todo.php">Ajouter questionnaire</a></li>
 					<li><a href="./todo.php">Supprimer questionnaire</a></li>
 					<li><a href="./todo.php">Mes statistiques</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Gestion</a>
+				<ul>
+					<li><a href="./gestionNouveauxInscrits.php">Nouveaux inscrits</a></li>
+					<li><a href="./todo.php">Nouvelles spécialités</a></li>
+					<li><a href="./todo.php">Nouveaux Medecins </a></li>
 				</ul>
 			</li>
 			<li><a href="./deconnexion.php">Deconnexion</a></li>

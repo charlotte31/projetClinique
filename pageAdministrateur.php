@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- Page d'accueil de l'administrateur -->
+
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-
-<!-- page reservee aux medecins une fois connectes /!\ redondance avec indexMembreMedecin.php-->
-
 <?php
 	require('controleSession.php');
 ?>
@@ -16,11 +16,11 @@
 <link type="text/css" rel="stylesheet" href="style.css"/>
 	</head>
 		<body>
-			<?php include("menuMembreMedecin.php"); ?>
+			<?php include("menuMembreAdmin.php"); ?>
 			<?php include("menuGaucheMedecin.php"); ?>
 				<div id="container">
 					<div id="content">
-					
+					Bonjour Dr Duroux!
 					
 					</div>
 				</div>
