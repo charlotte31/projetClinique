@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <!-- code php qui va voir dans les tables patient et medecin si le mail et le mot de passe donnés lors de la connexion existent dans les tables 
-pour l'instant ne vériefie que dans la table medecin, je verifierai la table patient quand leur inscription fonctionnera -->
+pour l'instant ne vérifie que dans la table medecin, je verifierai la table patient quand leur inscription fonctionnera 
+
+Permet de connecter l'utilisateur a sa session-->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -37,6 +39,7 @@ pour l'instant ne vériefie que dans la table medecin, je verifierai la table pa
 						if($pwd == $infos[0])
 						{
 							// C'est ici que je mets le code servant à effectuer la connexion, car le mot de passe est bon.
+<<<<<<< HEAD
 							if (isset($_POST['mail']) && isset($_POST['pwd'])) {
 								// on la démarre :)
 								session_start ();
@@ -46,6 +49,36 @@ pour l'instant ne vériefie que dans la table medecin, je verifierai la table pa
 								// on redirige notre visiteur vers une page de notre section membre
 								header ('location: pageMembreMedecin.php');
 								echo 'ok';
+=======
+							if (isset($_POST['mail']) && isset($_POST['pwd']) ) { 
+								$quete = mysqli_query($connexion, "SELECT administrateur FROM medecin WHERE mail=\"".$_POST['mail']."\"");//on regarde dans un premier temps si c'est l'administrateur
+								$infos = mysqli_fetch_array($quete, MYSQLI_NUM);
+								if($infos[0] == 1){
+									// on la démarre :)
+									session_start ();
+									// on enregistre les paramètres de notre visiteur comme variables de session ($mail et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+									$_SESSION['mail'] = $mail;
+									$_SESSION['pwd'] = $pwd;
+									// on redirige notre visiteur vers une page de notre section membre
+									header ('location: pageAdministrateur.php');
+								}
+								else{//on va verifier si le medecin a ete accepte par l'adm, si ce n'est pas le cas : redirection vers page d'attente
+									$quete = mysqli_query($connexion, "SELECT accepte FROM medecin WHERE mail=\"".$_POST['mail']."\"");
+									$infos = mysqli_fetch_array($quete, MYSQLI_NUM);
+									if($infos[0] == 1){
+										// on la démarre :)
+										session_start ();
+										// on enregistre les paramètres de notre visiteur comme variables de session ($mail et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+										$_SESSION['mail'] = $mail;
+										$_SESSION['pwd'] = $pwd;
+										// on redirige notre visiteur vers une page de notre section membre
+										header ('location: pageMembreMedecin.php');
+									}
+									else {
+										header ('location: attenteValidation.php');
+									}
+								}
+>>>>>>> origin/master
 							}
 						}
 						else // Si le couple mail/ mot de passe n'est pas bon.

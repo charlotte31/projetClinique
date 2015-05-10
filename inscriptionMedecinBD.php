@@ -1,8 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+
+<!-- Apres leur inscription via le formulaire, cette page permet d'enregistrer les donnees concernant le medecin dans la base de donnee-->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 		<meta name="Description" content="A free open source web design by Gen.  Free for anyone to use as long as credits are intact. " />
@@ -36,7 +39,7 @@
 						$res = mysqli_query($connexion, "SELECT idSpe FROM specialite WHERE nomSpe =\"".$_POST['specialites']."\"");
 						$tab = mysqli_fetch_array($res, MYSQLI_NUM);
 						$idSpe = $tab[0];
-						mysqli_query($connexion, "INSERT INTO medecin VALUES('', '$nom', '$prenom', '$mail','$pwd','','$idSpe','')");						
+						mysqli_query($connexion, "INSERT INTO medecin VALUES('', '$nom', '$prenom', '$mail','$pwd','','$idSpe','','')");						
 						
 						//recapitulatif des informations données
 						echo "Votre nom est : ".$nom."<br>";
